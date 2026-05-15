@@ -20,6 +20,11 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
           <a href="#registration" class="action-primary">Apply for the cohort</a>
           <a href="#curriculum" class="action-secondary">Explore the path</a>
         </div>
+        <div class="hero-cues" aria-label="Application capabilities">
+          <span>Program-fit validation</span>
+          <span>Admissions-ready data</span>
+          <span>Next-step routing</span>
+        </div>
       </div>
 
       <div class="cohort-board" aria-label="Cohort progress preview">
@@ -43,6 +48,12 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
             <strong>Demo day</strong>
             <small>Showcase ready</small>
           </div>
+        </div>
+        <div class="mentor-lane" aria-label="Admissions pipeline">
+          <span>Apply</span>
+          <span>Review</span>
+          <span>Pair</span>
+          <span>Onboard</span>
         </div>
         <div class="board-footer">
           Wix Headless lets Forge keep a custom learning experience up front
@@ -76,6 +87,10 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
           <p>Route successful submissions into a dedicated next-step page that feels native to the academy.</p>
         </article>
       </div>
+      <div class="curriculum-note">
+        <span>Admissions workflow</span>
+        <strong>Every submission can be reviewed by track, level, contact owner, and cohort deadline.</strong>
+      </div>
     </div>
   </section>
 
@@ -92,9 +107,33 @@ import TournamentRegistrationForm from "../components/TournamentRegistrationForm
           <span>Priority deadline</span>
           <strong>June 12, 2026</strong>
         </div>
+        <div class="capability-stack" aria-label="Form capabilities">
+          <div>
+            <span>Validation</span>
+            <strong>Required applicant details and email format are checked first.</strong>
+          </div>
+          <div>
+            <span>Structured submission</span>
+            <strong>Track, level, goals, and contact fields stay mapped to Wix Forms.</strong>
+          </div>
+          <div>
+            <span>Success routing</span>
+            <strong>Accepted applications move to a branded confirmation step.</strong>
+          </div>
+          <div>
+            <span>CRM-ready</span>
+            <strong>Admissions can segment follow-up by cohort fit and mentor lane.</strong>
+          </div>
+        </div>
       </aside>
 
-      <TournamentRegistrationForm class="academy-registration-form" />
+      <div class="registration-form-wrap">
+        <div class="form-status-strip">
+          <span>Wix Headless Forms</span>
+          <strong>Admissions pipeline connected</strong>
+        </div>
+        <TournamentRegistrationForm class="academy-registration-form" />
+      </div>
     </div>
   </section>
 </Layout>

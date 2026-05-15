@@ -23,6 +23,10 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .forge-site {
   font-family: var(--font-family);
   color: var(--ink);
@@ -104,10 +108,29 @@ body {
 }
 
 .academy-hero {
+  position: relative;
+  overflow: hidden;
   border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(36, 71, 168, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(30, 127, 92, 0.08), transparent 34%),
+    rgba(244, 248, 242, 0.74);
+  background-size: 96px 96px, auto, auto;
+}
+
+.academy-hero::before {
+  position: absolute;
+  inset: 12% auto auto 0;
+  width: min(36rem, 55vw);
+  height: 0.5rem;
+  content: "";
+  background: repeating-linear-gradient(90deg, var(--accent-color) 0 28px, transparent 28px 48px);
+  opacity: 0.35;
 }
 
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.85fr);
   gap: clamp(2rem, 5vw, 5rem);
@@ -147,6 +170,27 @@ body {
   flex-wrap: wrap;
   gap: 0.85rem;
   margin-top: 2rem;
+}
+
+.hero-cues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.15rem;
+}
+
+.hero-cues span,
+.mentor-lane span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.42rem 0.72rem;
+  border: 1px solid rgba(30, 127, 92, 0.22);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 0.78rem;
+  font-weight: 850;
 }
 
 .action-primary,
@@ -202,7 +246,23 @@ body {
 }
 
 .cohort-board {
+  position: relative;
   padding: clamp(1rem, 3vw, 1.5rem);
+  background:
+    linear-gradient(90deg, rgba(30, 127, 92, 0.06) 1px, transparent 1px),
+    #ffffff;
+  background-size: 22px 22px, auto;
+}
+
+.cohort-board::before {
+  position: absolute;
+  inset: 0.8rem 0.8rem auto auto;
+  width: 4rem;
+  height: 4rem;
+  content: "";
+  border-top: 4px solid var(--accent-color);
+  border-right: 4px solid var(--accent-color);
+  opacity: 0.5;
 }
 
 .board-header {
@@ -267,6 +327,20 @@ body {
   line-height: 1.6;
 }
 
+.mentor-lane {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.mentor-lane span {
+  justify-content: center;
+  border-color: rgba(36, 71, 168, 0.22);
+  color: var(--secondary-color);
+  background: #f2f6ff;
+}
+
 .curriculum-section,
 .registration-section {
   padding: clamp(3.5rem, 7vw, 6rem) 0;
@@ -316,6 +390,32 @@ body {
   line-height: 1.65;
 }
 
+.curriculum-note {
+  grid-column: 2;
+  margin-top: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(225, 92, 57, 0.24);
+  border-radius: 8px;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(225, 92, 57, 0.09), rgba(36, 71, 168, 0.06)),
+    #ffffff;
+}
+
+.curriculum-note span {
+  display: block;
+  color: var(--accent-color);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.curriculum-note strong {
+  display: block;
+  margin-top: 0.35rem;
+  line-height: 1.45;
+}
+
 .registration-section {
   background:
     linear-gradient(180deg, rgba(36, 71, 168, 0.08), transparent),
@@ -361,9 +461,66 @@ body {
   font-size: 1.35rem;
 }
 
+.capability-stack {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.capability-stack div {
+  padding: 0.95rem;
+  border: 1px solid rgba(16, 35, 29, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(30, 127, 92, 0.08), rgba(36, 71, 168, 0.05)),
+    #ffffff;
+}
+
+.capability-stack span,
+.form-status-strip span {
+  display: block;
+  color: var(--secondary-color);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.capability-stack strong {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.registration-form-wrap {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.form-status-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(36, 71, 168, 0.18);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(37, 60, 50, 0.08);
+}
+
+.form-status-strip strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
 .form-container {
   max-width: none;
   padding: clamp(1rem, 2.6vw, 1.5rem);
+  background:
+    linear-gradient(180deg, rgba(36, 71, 168, 0.06), transparent 24%),
+    #ffffff;
 }
 
 .form-section {
@@ -372,7 +529,9 @@ body {
   border: 1px solid var(--line);
   border-left: 5px solid var(--primary-color);
   border-radius: 8px;
-  background: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(30, 127, 92, 0.055), transparent 38%),
+    #ffffff;
 }
 
 .form-section-secondary {
@@ -388,6 +547,13 @@ body {
 }
 
 .form-section-header span {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(225, 92, 57, 0.24);
+  border-radius: 8px;
+  background: rgba(225, 92, 57, 0.08);
   color: var(--accent-color);
   font-size: 0.78rem;
   font-weight: 900;
@@ -575,6 +741,10 @@ body {
   .registration-copy {
     position: static;
   }
+
+  .curriculum-note {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 560px) {
@@ -591,5 +761,44 @@ body {
   .form-actions .site-button,
   .hero-actions a {
     width: 100%;
+  }
+
+  .hero-copy h1 {
+    font-size: 3.5rem;
+  }
+
+  .mentor-lane {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-status-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .module-card {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .module-card:hover {
+    transform: translateX(0.25rem);
+    box-shadow: 0 12px 28px rgba(37, 60, 50, 0.12);
+  }
+
+  .cohort-board::before {
+    animation: forgeMeasure 4s ease-in-out infinite;
+  }
+}
+
+@keyframes forgeMeasure {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.45rem);
   }
 }

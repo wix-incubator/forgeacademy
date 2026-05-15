@@ -3,15 +3,98 @@ import Layout from "../layouts/Layout.astro";
 import TournamentRegistrationForm from "../components/TournamentRegistrationForm.astro";
 ---
 
-<Layout title="Soccer Tournament Registration">
-  <div class="max-w-4xl mx-auto">
-    <div class="mb-8 text-center">
-      <h1 class="text-3xl font-medium mb-3 text-[#20455E]">Soccer Tournament Registration</h1>
-      <p class="text-gray-500 max-w-xl mx-auto text-sm">
-        Fill out the form below to register your team for the upcoming soccer tournament.
-      </p>
+<Layout
+  title="Forge Academy Cohort Registration"
+  description="Apply for a cohort-based learning program with Forge Academy, using Wix Headless registration."
+>
+  <section class="academy-hero">
+    <div class="site-shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Spring 2026 cohort - 10 weeks - hybrid studio</p>
+        <h1>Forge Academy</h1>
+        <p class="hero-lede">
+          A focused program for builders who want structured mentorship,
+          weekly deliverables, and a launch-ready portfolio project by demo day.
+        </p>
+        <div class="hero-actions" aria-label="Academy actions">
+          <a href="#registration" class="action-primary">Apply for the cohort</a>
+          <a href="#curriculum" class="action-secondary">Explore the path</a>
+        </div>
+      </div>
+
+      <div class="cohort-board" aria-label="Cohort progress preview">
+        <div class="board-header">
+          <span>Admissions desk</span>
+          <strong>32 seats</strong>
+        </div>
+        <div class="module-list">
+          <div class="module-card active">
+            <span>Week 01</span>
+            <strong>Product systems</strong>
+            <small>Enrollment open</small>
+          </div>
+          <div class="module-card">
+            <span>Week 04</span>
+            <strong>Prototype sprint</strong>
+            <small>Mentor review</small>
+          </div>
+          <div class="module-card">
+            <span>Week 10</span>
+            <strong>Demo day</strong>
+            <small>Showcase ready</small>
+          </div>
+        </div>
+        <div class="board-footer">
+          Wix Headless lets Forge keep a custom learning experience up front
+          while registration details land in the same operational workflow used
+          by the admissions team.
+        </div>
+      </div>
     </div>
-    
-    <TournamentRegistrationForm />
-  </div>
+  </section>
+
+  <section id="curriculum" class="curriculum-section">
+    <div class="site-shell curriculum-grid">
+      <div class="section-heading">
+        <p class="eyebrow">Cohort structure</p>
+        <h2>Designed for applicants who need clarity before they commit.</h2>
+      </div>
+      <div class="outcome-list">
+        <article>
+          <span>01</span>
+          <h3>Track-aware enrollment</h3>
+          <p>Collect program track, experience level, and contact details in one clean Wix Forms submission.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Mentor-ready data</h3>
+          <p>Use applicant responses to prepare pairing, scheduling, and onboarding before the first session.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Confirmation path</h3>
+          <p>Route successful submissions into a dedicated next-step page that feels native to the academy.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="registration" class="registration-section">
+    <div class="site-shell registration-grid">
+      <aside class="registration-copy">
+        <p class="eyebrow">Application</p>
+        <h2>Tell us where you are building from.</h2>
+        <p>
+          This form keeps the academy site fast and custom while Wix Headless
+          handles validation, submission, and the registration record.
+        </p>
+        <div class="deadline-box">
+          <span>Priority deadline</span>
+          <strong>June 12, 2026</strong>
+        </div>
+      </aside>
+
+      <TournamentRegistrationForm class="academy-registration-form" />
+    </div>
+  </section>
 </Layout>

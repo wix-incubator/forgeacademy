@@ -4,13 +4,16 @@ import SuccessMessage from "../components/SuccessMessage.astro";
 import Button from "../components/Button.astro";
 ---
 
-<Layout title="Registration Successful | Soccer Tournament">
-  <div class="max-w-2xl mx-auto py-8">
+<Layout
+  title="Application Received | Forge Academy"
+  description="Forge Academy application confirmation."
+>
+  <div class="success-page site-shell">
     <SuccessMessage
-      title="Registration Complete!"
-      message="Your team has been successfully registered for the soccer tournament. You will receive a confirmation email with further details shortly."
+      title="Application received."
+      message="Your cohort application has been submitted through Wix Headless. The Forge team can now review your track, level, and contact details."
     >
-      <div class="mt-6">
+      <div class="success-actions">
         <a href="/" class="inline-block">
           <Button variant="primary">Return to Home</Button>
         </a>

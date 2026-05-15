@@ -6,7 +6,7 @@ This website is powered by Wix Headless and built using [wix-headless.dev](https
 
 ## Links
 
-- Live site: [https://forge-acad-3199e0e5-gonenj.wix-site-host.com](https://forge-acad-3199e0e5-gonenj.wix-site-host.com)
+- Live site: [http://forgeacademy.academy/](http://forgeacademy.academy/)
 - Source: [https://github.com/wix-incubator/forgeacademy](https://github.com/wix-incubator/forgeacademy)
 - Wix site ID: `30c04322-4fa3-4ca1-a127-c3ee7a6fc219`
 
